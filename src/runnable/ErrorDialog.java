@@ -55,6 +55,7 @@ public class ErrorDialog extends JDialog
 			if(code.equals("999")) errorD.setText("Succesful Execution");
 			if(code.equals("003")) errorD.setText("\"add to...\" option is not choosen");
 			if(code.equals("004")) errorD.setText("cant accept letters in Line field");
+			if(code.equals("005")) errorD.setText("Folder can't be found");
 		}
 	}
 	/**

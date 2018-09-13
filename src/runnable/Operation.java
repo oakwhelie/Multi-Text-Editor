@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.util.List;
 
 import javax.swing.JTextField;
@@ -42,6 +43,10 @@ public class Operation
 			{
 				e.printStackTrace();
 				return 2;
+			} catch(NoSuchFileException e)
+			{
+				ErrorDialog.errorDial("005");
+				return 0;
 			} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -159,7 +164,12 @@ public class Operation
 		{
 			e.printStackTrace();
 			return 2;
-		} catch (IOException e) 
+		} catch(NoSuchFileException e)
+		{
+			ErrorDialog.errorDial("005");
+			return 0;
+		}
+		catch (IOException e) 
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
